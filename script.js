@@ -62,6 +62,22 @@ function writePassword() {
       }                      
 
 }
+//prompts the for a password length
+function getPasswordLength(){                                                                                                      
+  passwordLength = prompt("How long do you want your password to be?","enter a number between 8 and 128"); 
+  if(passwordLength !== null){  
+    parseInt(passwordLength);                                                                              
+    if(isNaN(passwordLength) || (passwordLength < 8 || passwordLength > 128)){ 
+       //checks if the user entered incorrectly
+      alert("Error: Invalid imput");
+      getPasswordLength();                                                                                                 
+    }
+    return passwordLength;
+  }
+  else {
+    return;
+  }
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
