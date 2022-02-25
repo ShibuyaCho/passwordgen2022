@@ -8,7 +8,7 @@ var generateBtn = document.querySelector("#generate");
     ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
     [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
   ];
-  
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -35,6 +35,31 @@ function writePassword() {
       var windowAnswer2 = window.confirm("Lowercase?");
       var windowAnswer3 = window.confirm("Numbers?");
       var windowAnswer4 = window.confirm("Special characters?");
+      if(windowAnswer1 === true){
+        passNew = userChar.push(...allChar[0].slice(0))  
+        console.log("true");                                                           
+      }
+    
+      if(windowAnswer2 === true){
+        passNew = userChar.push(...allChar[1].slice(0))
+      }
+    
+      if(windowAnswer3 === true){
+        passNew = userChar.push(...allChar[2].slice(0))
+      }
+      
+     
+    
+      if(windowAnswer4 === true){
+        passNew = userChar.push(...allChar[3].slice(0))
+       
+      }
+     
+       //is array empty?
+      if(userChar.length === 0){                                           
+        alert("Error: please choose confirm for at least one option"); 
+        getPasswordType(allChar, userChar, passNew); 
+      }                      
 
 }
 
